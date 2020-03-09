@@ -2,9 +2,11 @@
     font-size: 2.5rem;
     font-weight: 300;
     text-align: center;
+    padding-bottom: 20px;
 
     @mixin atSmall {
         font-size: 3.75rem;
+        padding-bottom: 0;
     }
 
     strong {

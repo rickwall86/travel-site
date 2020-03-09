@@ -9,12 +9,25 @@
 }
 
 .feature-item__icon {
-    position: absolute;
-    left: 0;
+    display: block;
+    margin: 0 auto;
+
+    @mixin atSmall {
+        position: absolute;
+        left: 0;
+    }
 }
 
 .feature-item__title {
-    font-size: 9rem;
+    text-align: center;
+    font-size: 1.6rem;
     font-weight: 300;
+    margin-top: 0.6em;
     margin-bottom: 0.8rem;
+
+    @mixin atSmall {
+        text-align: left;
+        font-size: 1.875rem;
+        margin-top: 1em;
+    }
 }
