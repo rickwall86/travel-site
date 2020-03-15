@@ -1,17 +1,25 @@
 .site-header {
     padding: 10px 0;
     position: absolute;
-    z-index: 1;
+    z-index: 2;
     width: 100%;
+    transition: background-color 0.5s ease-out;
 
     @mixin atMedium {
-        background-color: rgba($mainBlue, .3);
+        background-color: rgba(46, 85, 114, 0.3);
 
     }
 }
 
+.site-header--is-expanded {
+    background-color: rgba(46, 85, 114, 0.55);
+}
+
 .site-header__btn-container {
-    float: right;
+
+    @mixin atMedium {
+        float: right;
+    }
 }
 
 .site-header__logo {
@@ -30,22 +38,77 @@
 }
 
 .site-header__menu-content {
-    display: none;
+    opacity: 0;
+    transform: scale(1.2);
+    transition: all .4s ease-out;
+    z-index: -10;
+    position: relative;
+    padding-top: 95px;
+    padding-bottom: 5px;
+    text-align: center;
 
     @mixin atMedium {
-        display: block;
+        opacity: 1;
+        z-index: 1;
+        padding-top: 0;
+        transform: scale(1);
     }
+}
+
+.site-header__menu-content--is-visible {
+    opacity: 1;
+    z-index: 1;
+    transform: scale(1);
 }
 
 .site-header__menu-icon {
     width: 20px;
-    height: 20px;
-    background-color: #fff;
+    height: 19px;
     position: absolute;
     top: 10px;
     right: 10px;
+    z-index: 2;
 
     @mixin atMedium {
         display: none;
     }
 }
+
+ .site-header__menu-icon::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        height: 3px;
+        background-color: #fff;
+        /* Adds a start (pivot) point for the transform rotate in below modifier --close-x (default 50% 50%, which is the center of the element, x and y) */
+        transform-origin: 0 0;
+}
+
+.site-header__menu-icon__middle {
+        position: absolute;
+        top: 8px;
+        left: 0;
+        width: 20px;
+        height: 3px;
+        background-color: #fff;
+}
+
+.site-header__menu-icon::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 20px;
+        height: 3px;
+        background-color: #fff;
+}
+
+.site-header__menu-icon--close-x::before {
+        transform: rotate(45deg) scaleX(1.2);
+    }
+
+.site-header__menu-icon--close-x::after {
+        transform: rotate(-45) scaleX(1.2);
+    }
