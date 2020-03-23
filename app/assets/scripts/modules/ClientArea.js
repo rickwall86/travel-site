@@ -6,7 +6,7 @@ class ClientArea {
         this.form = document.querySelector('.client-area__form');
         this.field = document.querySelector('.client-area__input');
         this.contentArea = document.querySelector('.client-area__content-area');
-        tjhis.events();
+        this.events();
     }
 
     events() {
