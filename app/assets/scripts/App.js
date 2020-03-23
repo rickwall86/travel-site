@@ -5,6 +5,16 @@ import RevealOnScroll from './modules/RevealOnScroll';
 import StickyHeader from './modules/StickyHeader';
 import ClientArea from './modules/ClientArea';
 
+// React related code below
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+// Import react component which we created
+import MyAmazingComponent from "./modules/MyAmazingComponent";
+
+// belows takes two arguments. First one is a component (reusable feature) that you want to render to the page. The second is the place on the page you want to render to
+ReactDOM.render(<MyAmazingComponent />, document.querySelector('#my-react-example'));
+
 new ClientArea();
 new MobileMenu();
 new RevealOnScroll(document.querySelectorAll('.feature-item'), 75);
