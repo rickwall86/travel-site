@@ -17,7 +17,7 @@ const postCSSPlugins = [
 class RunAfterCompile {
     apply(compiler) {
         compiler.hooks.done.tap('Copy images', function() {
-            fse.copySync('./app/assets/images', './dist/assets/images')
+            fse.copySync('./app/assets/images', './docs/assets/images')
         })
     }
 }
@@ -87,7 +87,7 @@ if (currentTask == 'build') {
         filename: '[name].[chunkhash].js', 
         chunkFilename: '[name].[chunkhash].js',
         // by using below path,, we make sure regardless of what operating system we use, that we have an absolute path to the correct directory
-        path: path.resolve(__dirname, 'dist')
+        path: path.resolve(__dirname, 'docs')
     },
     config.mode = 'production'
     config.optimization = {
