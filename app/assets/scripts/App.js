@@ -9,7 +9,7 @@ import ClientArea from './modules/ClientArea';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-// Import react component which we created
+// // Import react component which we created
 import MyAmazingComponent from "./modules/MyAmazingComponent";
 
 // belows takes two arguments. First one is a component (reusable feature) that you want to render to the page. The second is the place on the page you want to render to
