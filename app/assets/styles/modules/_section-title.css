@@ -1,41 +1,39 @@
 .section-title {
-    font-size: 2.5rem;
-    font-weight: 300;
-    text-align: center;
-    padding-bottom: 20px;
+  font-size: 2.55rem;
+  font-weight: 300;
+  text-align: center;
 
-    @mixin atSmall {
-        font-size: 3.75rem;
-        padding-bottom: 0;
-    }
+  @mixin atSmall {
+    font-size: 3.75rem;
+  }
 
-    strong {
-        font-weight: 500;
-    }
+  strong {
+    font-weight: 500;
+  }
 
-    &--blue {
-        color: $mainBlue;
-    }
-}
+  &--blue {
+    color: $mainBlue;
+  }
 
-.section-title--less-margin {
+  &--less-margin {
     margin-bottom: 1.3rem;
     margin-top: 0;
-}
+  }
 
-.section-title__icon {
+  &__icon {
     display: block;
-    margin-right: auto;
     margin-left: auto;
-    margin-bottom: 0.6rem;
+    margin-right: auto;
+    margin-bottom: .6rem;
 
     @mixin atSmall {
-        position: relative;
-        top: 8px;
-        margin-right: 0.5rem;
-        margin-left: 0;
-        margin-bottom: 0;
-        display: inline-block;
+      position: relative;
+      top: 8px;
+      margin-right: .5rem;
+      margin-left: 0;
+      margin-bottom: 0;
+      display: inline-block;
     }
+  }
 
 }
